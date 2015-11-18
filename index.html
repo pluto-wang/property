@@ -12,11 +12,8 @@
     console.log(response);
     if (response.status === 'connected') {
       // Logged into your app and Facebook.	
-<<<<<<< HEAD
+
        info();
-=======
-      testAPI();
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -28,42 +25,28 @@
         'into Facebook.';
     }
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
   function checkLoginState() {
     FB.getLoginStatus(function(response) {
       statusChangeCallback(response);
     });
   }
-<<<<<<< HEAD
-=======
 
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
   window.fbAsyncInit = function() {
+
   FB.init({
     appId      : '1644908075776503',
     cookie     : true,  
     xfbml      : true,  
     version    : 'v2.5' 
   });
-<<<<<<< HEAD
+
   FB.getLoginStatus(function(response) {
     statusChangeCallback(response);
     });
   
 };
-=======
 
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-    });
-
-  
-};
-
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
 (function(d, s, id) { 
  var js, fjs = d.getElementsByTagName(s)[0];
  if (d.getElementById(id)) return;
@@ -71,7 +54,7 @@
  js.src = "//connect.facebook.net/en_US/sdk.js";
  fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
-<<<<<<< HEAD
+
  function info() { 
     FB.api('/me', function(response) {
    //document.getElementById('status').innerHTML ='<img src="http://graph.facebook.com/' + response.id + '/picture" />'+response.name;
@@ -81,31 +64,17 @@
 	else{
 	   top.location.href='user.html';}   
 });
-=======
-
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
-    });
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
   }
+
 </script>
 
 <div id="fb-root"></div>
-<<<<<<< HEAD
+
     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="margin-left: 25px;" size="xlarge" >
        Continue with Facebook
     </fb:login-button>
 <div id="status"></div>
-=======
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" size="xlarge">
-Continue with Facebook</fb:login-button>
-<div id="status"></div>
 
->>>>>>> f697a05520d7eb0e2ccd2d1129d0e02e8a76190f
 </body>
 </html>
 
