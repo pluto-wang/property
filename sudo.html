@@ -1,0 +1,20 @@
+<html>
+<body onload="info()">
+<title>sudo mode</title>
+<div id="myname"></div>
+<script>
+function info() {
+
+    //var p = location.search;
+    //document.getElementById("write").innerHTML =p ;
+    var p = location.search.substring(1).split("=");
+    p = unescape(p[1]); 
+    document.getElementById("myname").innerHTML = p; 
+
+}
+</script>
+
+
+
+</body>
+</html>
