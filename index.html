@@ -12,7 +12,6 @@
     console.log(response);
     if (response.status === 'connected') {
       // Logged into your app and Facebook.	
-
        info();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
@@ -58,8 +57,8 @@
  function info() { 
     FB.api('/me', function(response) {
    //document.getElementById('status').innerHTML ='<img src="http://graph.facebook.com/' + response.id + '/picture" />'+response.name;
-     
-     	if(response.id=='1288707881155503'){
+       
+ 	if(response.id=='1288707881155503'){
       	   top.location.href='sudo.html';}     
 	else{
 	   top.location.href='user.html';}   
@@ -74,7 +73,14 @@
        Continue with Facebook
     </fb:login-button>
 <div id="status"></div>
+	<form action="sudo.html" method="GET" >	
+	  
+	  <!--<input id="photo" name="http://graph.facebook.com/" + response.id + "/picture" />-->
+ 	  <input type="hidden" name="myname" value="pluto"/>
+          <input type="submit" value="Submit" />
 
+       </form>
+     
 </body>
 </html>
 
