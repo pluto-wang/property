@@ -1,0 +1,22 @@
+<html>
+
+<head>
+<title>user mode</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+<body onload="info()">
+
+<script>
+function info() {
+   
+    var p = location.search.substring(1).split("=");
+    p = unescape(p[1]);
+    var a = p.split("+");
+    for(var i=0;i<a.length;i=i+1){		 
+	document.write(a[i]+" ");    
+	} 
+}
+</script>
+
+</body>
+</html>
