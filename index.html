@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>R442's Property</title>
-<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 </head>
 <body>
 <script>
@@ -57,11 +57,17 @@
  function info() { 
     FB.api('/me', function(response) {
    //document.getElementById('status').innerHTML ='<img src="http://graph.facebook.com/' + response.id + '/picture" />'+response.name;
-       
- 	if(response.id=='1288707881155503'){
-      	   top.location.href='sudo.html';}     
+        if(response.id=='1288707881155503'){
+      	        var input=document.getElementById('sudoname');
+		input.value=response.name;
+		document.getElementById('form1').submit();
+
+	}     
 	else{
-	   top.location.href='user.html';}   
+		var input=document.getElementById('username');
+		input.value=response.name;
+		document.getElementById('form2').submit();
+	   }   
 });
   }
 
@@ -73,14 +79,17 @@
        Continue with Facebook
     </fb:login-button>
 <div id="status"></div>
-	<form action="sudo.html" method="GET" >	
-	  
-	  <!--<input id="photo" name="http://graph.facebook.com/" + response.id + "/picture" />-->
- 	  <input type="hidden" name="myname" value="pluto"/>
-          <input type="submit" value="Submit" />
 
+	<form action="sudo.html" method="get" id="form1">		  
+	  <!--<input id="photo" name="http://graph.facebook.com/" + response.id + "/picture" />-->
+ 	  <input type="hidden" name="myname"  id="sudoname"/>
        </form>
-     
+
+     	<form action="user.html" method="get" id="form2">		  
+	  <!--<input id="photo" name="http://graph.facebook.com/" + response.id + "/picture" />-->
+ 	  <input type="hidden" name="myname"  id="username"/>
+       </form>
+
 </body>
 </html>
 
