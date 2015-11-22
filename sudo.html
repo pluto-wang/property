@@ -1,20 +1,21 @@
 <html>
-<body onload="info()">
+<head>
 <title>sudo mode</title>
-<div id="myname"></div>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body onload="info()">
+
 <script>
+
 function info() {
 
-    //var p = location.search;
-    //document.getElementById("write").innerHTML =p ;
-    var p = location.search.substring(1).split("=");
-    p = unescape(p[1]); 
-    document.getElementById("myname").innerHTML = p; 
+    var p = location.search.substring(1).split("=");;
+    p=decodeURIComponent(p[1]);
+    document.write(p);	 
 
 }
 </script>
-
-
 
 </body>
 </html>
