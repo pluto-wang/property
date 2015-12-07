@@ -1,3 +1,18 @@
+<?php
+ echo("<title>user mode</title>");
+?>
+<script>
+
+ funcion info() {
+
+    var p = location.search.substring(1).split("=");
+    p = unescape(p[1]);
+    var a = p.split("+");
+    for(var i=0;i<a.length;i=i+1){
+        document.write(a[i]+" ");
+        }
+}
+</script>
 <p>
 <?
    
@@ -16,20 +31,22 @@
    $total_records=mysql_num_rows($result); 
 ?>
 </p>
-    <TABLE BORDER='1' ALIGN='CENTER'><TR ALIGN='CENTER'>;	
+    <TABLE BORDER='1' ALIGN='CENTER'><TR ALIGN='CENTER'>	
   <tr>
-    <td>Item</td>
-    <td>Id</td>
-    <td>Location</td>
-    <td>Borrower</td>
+    <td>&nbsp&nbsp Item</td>
+    <td>&nbsp&nbsp Id  </td>
+    <td>&nbsp&nbsp Location&nbsp  </td>
+    <td>&nbsp&nbsp User &nbsp </td>
+    <td>&nbsp Action</td>	
  </tr>
-<? for ($i=0;$i<$total_records;$i++) {$row = mysql_fetch_array($result);  ?> 
+<? for ($i=0;$i<$total_records;$i++) {$row = mysql_fetch_array($result); ?> 
   <tr>
-  <td><? echo $row[item];?></td> 
- <td><? echo $row[id];?></td> 
- <td><? echo $row[location];?></td>
- <td><? echo $row[user];?></td>  
+<td>&nbsp&nbsp<? echo $row[item];?>&nbsp&nbsp&nbsp</td> 
+  <td>&nbsp&nbsp<? echo $row[id];?>&nbsp&nbsp</td> 
+  <td>&nbsp&nbsp<? echo $row[location];?></td>
+  <td>&nbsp&nbsp<? echo $row[user];?>&nbsp&nbsp</td> 
+  <td><input type="button" onclick="php_function()" value="borrow"></td>
 </tr> 
 		  
-<? } ?>
+ <?} ?>
 </table>
