@@ -1,20 +1,8 @@
 
 <?echo("<title>user mode</title>");?>
 
-<script>
-   funcion info() {
-
-	var p = location.search.substring(1).split("=");
-	p = unescape(p[1]);
-	var a = p.split("+");
-	for(var i=0;i<a.length;i=i+1){
-		document.write(a[i]+" ");
-	}
-}
-</script>
-
 <p><b><font size=6>R442's Property</font></b></p>
-<p>
+
 <?
 
 $link=mysql_connect("localhost","root","1234");
@@ -31,9 +19,30 @@ $sql="SELECT * FROM o";
 $result = mysql_query($sql) ;
 $total_records=mysql_num_rows($result); 
 ?>
-</p>
 
-<table BORDER='1' ALIGN='CENTER'><tr ALIGN='CENTER'>	
+<script language="javascript" type="application/javascript">
+   function info() {
+
+	var p = location.search.substring(1).split("=");
+	p = unescape(p[1]);
+	var a = p.split("+");
+	for(var i=0;i<a.length;i=i+1){
+		document.write(a[i]+" ");
+	}
+}
+
+ var myWindow;
+ function bw(){
+    
+    myWindow = window.open("", "", "width=300, height=300");
+    myWindow.document.write("<p>This is 'myWindow'</p>");
+
+}
+
+</script>
+
+
+<table BORDER='3' ALIGN='CENTER'><tr ALIGN='CENTER'>	
 <tr>
 <td><b>&nbsp&nbsp Item</b></td>
 <td><b>&nbsp&nbsp Id</b></td>
@@ -48,7 +57,7 @@ $total_records=mysql_num_rows($result);
 	<td>&nbsp&nbsp<? echo $row[location];?></td>
 	<td>&nbsp&nbsp<? echo $row[user];?>&nbsp&nbsp</td>
 	<?if($row[user]==NULL){?>
- 		<td><input type="button" onclick="info()" id=<? echo$row[id];?> value=Borrow></td>	
+ 		<td><input type="button" onclick="bw()" id=<? echo$row[id];?> value=Borrow></td>	
         <?}else{ ?>
 	<td></td>
 	<?}?>
