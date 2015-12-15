@@ -49,10 +49,34 @@ $total_records=mysql_num_rows($result1);
 			myWindow.document.write(id+" <br>");
 			var date=new Date();
 			myWindow.document.write("DATE : ");
-			myWindow.document.write(date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate());		
+			myWindow.document.write(date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate()+"<br><br>");		
 		}
 
 	<?}?>
+	//myWindow.document.write("<p><button onclick="">Okey</button> <button onclick="document.close()">Cancel</button></p>");
+	//myWindow.document.write("<p>'<input type="button"  value=Okey>'</p>");
+	var btn2=myWindow.document.createElement("BUTTON");
+	var t = myWindow.document.createTextNode("Okey");
+	btn2.appendChild(t);
+	myWindow.document.body.appendChild(btn2);
+
+	btn2.onclick = function(){
+		window.alert('update db');
+        myWindow.window.close();
+	};
+
+	myWindow.document.write(" ");
+
+	var btn1=myWindow.document.createElement("BUTTON");
+	var t = myWindow.document.createTextNode("Cancel");
+	btn1.appendChild(t);
+	myWindow.document.body.appendChild(btn1);
+
+	btn1.onclick = function(){
+        myWindow.window.close();
+	};
+
+
  }
 
 </script>
